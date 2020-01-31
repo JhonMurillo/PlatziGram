@@ -1,0 +1,5 @@
+/platzigram/bin
+/platzigram/include
+/platzigram/lib
+/platzigram/__pycache__
+.vscode
