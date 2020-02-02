@@ -1,6 +1,6 @@
 # SetUp
 
-1. python -m venv platzigram
+1. python -m virtualenv platzigram
 
 2. Enablerun scripts in PowerShell Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
