@@ -3,3 +3,7 @@
 /platzigram/lib
 /platzigram/__pycache__
 .vscode
+/media
+migrations
+*.sqlite3
+__pycache__

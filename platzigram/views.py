@@ -5,13 +5,14 @@ from http import HTTPStatus
 #Utilities
 from datetime import datetime
 import os
+import socket
 
 def status(request):
     try:
         return JsonResponse({
                 'message': 'PlatziGram working properly.',
                 'date': datetime.now().strftime('%b %dth, %Y - %H:%M Hrs'),
-                'hostname':os.uname()[1]
+                'hostname':socket.gethostname()
             }, status=HTTPStatus.OK)
     except Exception as ex:
         print(ex)
