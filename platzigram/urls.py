@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from . import views
 from posts import views as posts_views
+from users import views as users_views
 
 
 
@@ -27,6 +28,11 @@ urlpatterns = [
     path('status/', views.status),
     path('challenge/', views.challenge),
     path('greeting/<str:name>/<int:age>', views.greeting),
+
     path('posts/', posts_views.list_posts),
     path('post', include('posts.urls')),
+
+    path('users/login/', users_views.login_view),
+    path('user', include('users.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
