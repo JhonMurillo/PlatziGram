@@ -25,14 +25,15 @@ from users import views as users_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('status/', views.status),
-    path('challenge/', views.challenge),
-    path('greeting/<str:name>/<int:age>', views.greeting),
+    path('status/', views.status, name='status'),
+    path('challenge/', views.challenge, name='challenge'),
+    path('greeting/<str:name>/<int:age>', views.greeting , name='greeting'),
 
-    path('posts/', posts_views.list_posts),
+    path('posts/', posts_views.list_posts , name='feed'),
     path('post', include('posts.urls')),
 
-    path('users/login/', users_views.login_view),
+    path('users/login/', users_views.login_view , name='login'),
+    path('users/logout/', users_views.logout_view, name='logout'),
     path('user', include('users.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
