@@ -1,5 +1,6 @@
 #Server
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
 from http import HTTPStatus
 
 #Utilities
@@ -53,3 +54,5 @@ def greeting(request, name, age):
         print(ex)
         return JsonResponse({'message': 'An error'}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
      
+def page_no_found(request, exception=None):
+    return render(request,'page_no_found.html')
