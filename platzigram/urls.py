@@ -30,7 +30,7 @@ urlpatterns = [
     path('challenge/', views.challenge, name='challenge'),
     path('greeting/<str:name>/<int:age>', views.greeting , name='greeting'),
 
-    # path('posts/', posts_views.list_posts , name='feed'),
+    path('', posts_views.list_posts , name='feed'),
     path('posts', include('posts.urls')),
 
     # path('users/login/', users_views.login_view , name='login'),
