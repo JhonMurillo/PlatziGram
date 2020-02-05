@@ -139,4 +139,4 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL = '/users/login'
 
-APPEND_SLASH=False
+APPEND_SLASH=True

@@ -4,7 +4,7 @@
     <a
       class="navbar-brand pr-5"
       style="border-right: 1px solid #efefef;"
-      href="{% url 'feed' %}"
+      href="{% url 'posts:feed' %}"
     >
       <img
         src="{% static 'img/instagram.png' %}"
@@ -24,7 +24,7 @@
             alt="{{ request.user.username }}"
           />
           {% else%}
-          <a href="{% url 'update_profile' %}">
+          <a href="{% url 'users:update_profile' %}">
             <img
               src="{% static 'img/default-profile.png' %}"
               height="35"
@@ -35,13 +35,13 @@
         </li>
 
         <li class="nav-item nav-icon">
-          <a href="{% url 'create_post' %}">
+          <a href="{% url 'posts:create_post' %}">
             <i class="fas fa-plus"></i>
           </a>
         </li>
 
         <li class="nav-item nav-icon">
-          <a href="{% url 'logout' %}">
+          <a href="{% url 'users:logout' %}">
             <i class="fas fa-sign-out-alt"></i>
           </a>
         </li>

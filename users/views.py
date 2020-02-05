@@ -14,7 +14,7 @@ def login_view(request):
         user =authenticate(request, username=username,password=password)
         if user:
             login(request,user)
-            return redirect('feed')
+            return redirect('posts:feed')
         else:
             return render(
                 request, 
@@ -24,7 +24,7 @@ def login_view(request):
                 })
     else:
         if request.user.is_authenticated:
-            return redirect('feed')
+            return redirect('posts:feed')
 
 
     return render(request, 'users/login.html')
@@ -32,7 +32,7 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('users:login')
 
 def signup(request):
     """Sign up view."""
@@ -40,10 +40,10 @@ def signup(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('users:login')
     else:
         if request.user.is_authenticated:
-            return redirect('feed')
+            return redirect('posts:feed')
 
         form = SignupForm()
 
@@ -82,10 +82,10 @@ def signup(request):
 #             profile = Profile(user=user)
 #             profile.save()
 
-#             return redirect('login')
+#             return redirect('users:login')
 #     else:
 #         if request.user.is_authenticated:
-#             return redirect('feed')
+#             return redirect('posts:feed')
 
 #     return render(request, 'users/signup.html')
 
@@ -108,7 +108,7 @@ def update_profile(request):
             profile.picture = data['picture']
             profile.save()
 
-            return redirect('update_profile')
+            return redirect('users:update_profile')
     else:
         form = ProfileForm()
 
