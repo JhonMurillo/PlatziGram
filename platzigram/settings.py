@@ -81,10 +81,21 @@ WSGI_APPLICATION = 'platzigram.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd79ke69moqlc71',
+        'USER': 'wnflwubbdntuci',
+        'PASSWORD': 'eb7f8d679b35f5ba1f73dd76c84ca91c37eedf52b11b4ec705957a8c44c9c4d6',
+        'HOST': 'ec2-107-22-250-33.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
