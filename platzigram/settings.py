@@ -25,9 +25,9 @@ SECRET_KEY = '%l&f$f=4xk&ge@hup$!_5ov%c!nlua8uv_vb8zjglqdjv6ur@i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ##PROD
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'platzigram-test.herokuapp.com']
 ##DEV
 # DEBUG = True
 
