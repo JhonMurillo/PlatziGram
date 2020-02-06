@@ -19,8 +19,6 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf.urls import handler404, handler500
 from . import views
-from posts import views as posts_views
-from users import views as users_views
 
 
 
@@ -30,13 +28,9 @@ urlpatterns = [
     path('challenge/', views.challenge, name='challenge'),
     path('greeting/<str:name>/<int:age>', views.greeting , name='greeting'),
 
-    path('', posts_views.list_posts , name='feed'),
-    path('posts', include('posts.urls')),
+    path('', include(('posts.urls', 'posts'), namespace='posts')),
 
-    # path('users/login/', users_views.login_view , name='login'),
-    # path('users/logout/', users_views.logout_view, name='logout'),
-    # path('users/signup/', users_views.signup, name='signup')
-    path('users', include('users.urls')),
+    path('users/', include(('users.urls', 'users'), namespace='users')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
