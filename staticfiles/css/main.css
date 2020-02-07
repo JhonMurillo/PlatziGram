@@ -43,3 +43,20 @@ html, body {
 #user-posts #post-thumb {
     background: #fff;
 }
+
+.collapse:not(.show){
+    display: block !important;
+}
+
+.navbar-nav{
+    flex-direction: inherit !important;
+}
+
+.navbar>.container{
+    flex-wrap: nowrap !important;
+}
+
+@media (min-width: 205px)
+.navbar>.container {
+    flex-wrap: wrap !important;
+}
